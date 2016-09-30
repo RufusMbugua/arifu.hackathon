@@ -21,9 +21,10 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
  $api->resource('contents', 'ContentController');
  $api->resource('subjects', 'SubjectsController');
  $api->resource('users', 'UsersController');
+ $api->post('login', 'AuthController@login');
 
 });
 Route::get('/', 'TestController@index');
 // Authentication routes...
-Route::post('login', 'AuthController@login');
+
 Route::get('logout', 'AuthController@logout');
