@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUserActivitiesTable extends Migration
+class CreateSubjectsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,9 +12,11 @@ class CreateUserActivitiesTable extends Migration
      */
     public function up()
     {
-        Schema::create('user_activities', function (Blueprint $table) {
-            $table->increments('id');
-            $table->string('activity');
+        Schema::create('subjects',function(Blueprint $table){
+          $table->increments('id');
+          $table->string('name');
+          $table->text('description');
+          $table->timestamps();
         });
     }
 
@@ -25,6 +27,6 @@ class CreateUserActivitiesTable extends Migration
      */
     public function down()
     {
-        Schema::drop('user_activities');
+        Schema::drop('subjects');
     }
 }
