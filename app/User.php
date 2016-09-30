@@ -26,9 +26,8 @@ class User extends \Cartalyst\Sentinel\Users\EloquentUser implements Authenticat
 	 *
 	 * @var array
 	 */
-	protected $fillable = ['first_name','last_name', 'email','username', 'password','phone'];
+	protected $fillable = ['full_name', 'type','username', 'password'];
 
-	protected $appends = ['avatar','name'];
 	/**
 	 * The attributes excluded from the model's JSON form.
 	 *
@@ -36,20 +35,12 @@ class User extends \Cartalyst\Sentinel\Users\EloquentUser implements Authenticat
 	 */
 	protected $hidden = ['password'];
 
-
-	function getAvatarAttribute(){
-		return $this->attributes['avatar']= Gravatar::src($this->attributes['email']);
+	public function contents(){
+		$this->hasMany('App\Content');
 	}
 
-	function getNameAttribute(){
-		return $this->attributes['name']=$this->attributes['first_name'].' '.$this->attributes['last_name'];
+	public function user_subjects(){
+		$this->hasMany('App\UserSubject');
 	}
-
-	function scopeActive($query){
-
-        $active = Carbon::now()->subMonth(2);
-        return $query->where('last_login', '>',$active );
-
-    }
 
 }
