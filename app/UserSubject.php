@@ -8,12 +8,12 @@ class UserSubject extends Model
 {
 
   protected $fillable = ['user_id','subject_id'];
-  
+
   public function users(){
-    $this->belongsTo('App\User');
+   return  $this->belongsTo('App\User');
   }
 
   public function subjects(){
-    $this->belongsTo('App\Subject');
+   return  $this->belongsTo('App\Subject');
   }
 }

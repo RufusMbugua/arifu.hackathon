@@ -36,11 +36,11 @@ class User extends \Cartalyst\Sentinel\Users\EloquentUser implements Authenticat
 	protected $hidden = ['password'];
 
 	public function contents(){
-		$this->hasMany('App\Content');
+	 return	$this->hasMany('App\Content');
 	}
 
 	public function user_subjects(){
-		$this->hasMany('App\UserSubject');
+	 return	$this->hasMany('App\UserSubject');
 	}
 
 }

@@ -10,10 +10,10 @@ class Content extends Model
   	protected $fillable = ['title', 'description','user_id', 'subject_id'];
 
     public function users(){
-      $this->belongsTo('App\User');
+      return $this->belongsTo('App\User');
     }
 
     public function subjects(){
-      $this->belongsTo('App\Subject');
+      return $this->belongsTo('App\Subject');
     }
 }

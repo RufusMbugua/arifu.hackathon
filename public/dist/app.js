@@ -72,7 +72,7 @@ angular.module('arifu.dashboard',[]).controller("dashboardCtrl", ['$scope', '$fi
 
       Requests.get('subjects',payload,function(data){
         if(data){
-          scope.subjects = data.data;
+          scope.subjects = data;
         }
       })
     }
@@ -82,7 +82,7 @@ angular.module('arifu.dashboard',[]).controller("dashboardCtrl", ['$scope', '$fi
 
       Requests.get('contents',payload,function(data){
         if(data){
-          scope.contents = data.data;
+          scope.contents = data;
         }
       })
     }
@@ -92,7 +92,7 @@ angular.module('arifu.dashboard',[]).controller("dashboardCtrl", ['$scope', '$fi
 
       Requests.get('users',payload,function(data){
         if(data){
-          scope.users = data.data;
+          scope.users = data;
         }
       })
     }
