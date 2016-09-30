@@ -14,5 +14,14 @@ $api = app('Dingo\Api\Routing\Router');
 //Route::get('logs', '\Rap2hpoutre\LaravelLogViewer\LogViewerController@index');
 $api->version('v1', ['middleware' => 'api.auth','namespace' => 'App\Http\Controllers'], function ($api) {
 
+
+});
+
+$api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
+ $api->resource('contents', 'ContentController');
+ $api->resource('subjects', 'SubjectsController');
+ $api->resource('users', 'UsersController');
+
 });
 Route::get('/', 'TestController@index');
+Route::get('/contents', 'ContentController@index');
