@@ -19,7 +19,7 @@ class SubjectsController extends Controller
      */
     public function index()
     {
-        $data = Subject::get();
+        $data = Subject::with('users')->get();
 
         if($data){
           return Response::json($data);

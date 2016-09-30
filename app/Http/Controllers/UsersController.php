@@ -22,7 +22,7 @@ class UsersController extends Controller
      */
     public function index()
     {
-      $data = User::get();
+      $data = User::with('contents','user_subjects')->get();
 
       if($data){
         return Response::json($data);
@@ -58,10 +58,6 @@ class UsersController extends Controller
       );
       };
     }
-
-public function authorize(){
-  $credentials = Input::only(['email','password']);
-}
     /**
      * Display the specified resource.
      *

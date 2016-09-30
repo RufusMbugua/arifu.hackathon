@@ -20,7 +20,7 @@ class ContentController extends Controller
      */
     public function index()
     {
-      $data = Content::get();
+      $data = Content::with('users','subjects')->get();
 
       if($data){
         return Response::json($data);
