@@ -43,7 +43,7 @@ angular.module("arifu").run(['$http', '$rootScope', '$state', function($http,
   rootScope,
   state) {
   rootScope.date = new Date();
-  rootScope.title = 'KE.scrow';
+  rootScope.title = 'Arifu Hack App';
   rootScope.messages = [];
   rootScope.menu = [];
   rootScope.errors = [];
@@ -52,5 +52,4 @@ angular.module("arifu").run(['$http', '$rootScope', '$state', function($http,
 
 angular.module("arifu").controller('appCtrl', ['$location', function(
   $location) {
-    console.log('Hello');
 }]);
