@@ -23,10 +23,10 @@ angular.module('arifu.users',[]).controller('usersCtrl', ['$scope', 'Requests',
 
     scope.login = function login() {
       var payload = scope.user;
-      Requests.post('auth', payload, function(data) {
-        if(data.success){
+      Requests.post('login', payload, function(data) {
+        if(data){
           scope.user = data.user;
-          state.go('admin.dashboard')
+          state.go('dashboard')
         }
 
       });
