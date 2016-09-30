@@ -48,7 +48,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
       $credentials = Input::all();
-      
+
       if(Sentinel::registerAndActivate($credentials)){
         return Response::json(
         [
@@ -59,6 +59,9 @@ class UsersController extends Controller
       };
     }
 
+public function authorize(){
+  $credentials = Input::only(['email','password']);
+}
     /**
      * Display the specified resource.
      *

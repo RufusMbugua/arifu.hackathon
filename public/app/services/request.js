@@ -1,4 +1,4 @@
-app.factory('Requests', ['$http', '$rootScope', function(http, rootScope) {
+angular.module("arifu").factory('Requests', ['$http', '$rootScope', function(http, rootScope) {
   var Requests = {};
   Requests.data = [];
   Requests.post_data = []

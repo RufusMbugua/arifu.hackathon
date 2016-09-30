@@ -1,4 +1,4 @@
-app.factory('errorInterceptor', ['$q', '$log', '$rootScope', '$timeout',
+angular.module("arifu").factory('errorInterceptor', ['$q', '$log', '$rootScope', '$timeout',
   '$injector',
   function(q, log, rootScope, timeout, injector) {
     rootScope.error = null;
@@ -63,6 +63,6 @@ app.factory('errorInterceptor', ['$q', '$log', '$rootScope', '$timeout',
   }
 ]);
 
-app.config(['$httpProvider', function(httpProvider) {
+angular.module("arifu").config(['$httpProvider', function(httpProvider) {
   httpProvider.interceptors.push('errorInterceptor');
 }]);

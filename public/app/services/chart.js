@@ -1,4 +1,4 @@
-app.factory('senChart', ['$rootScope', function(rootScope) {
+angular.module("arifu").factory('senChart', ['$rootScope', function(rootScope) {
   var senChart = {};
 
   senChart.plot = function plot(series, type) {

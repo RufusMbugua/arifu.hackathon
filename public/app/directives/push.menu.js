@@ -1,4 +1,4 @@
-app.directive('pushMenu', ['$rootScope', '$timeout', function(rootScope,
+angular.module("arifu").directive('pushMenu', ['$rootScope', '$timeout', function(rootScope,
   timeout) {
   return {
     restrict: 'A',

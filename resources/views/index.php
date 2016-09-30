@@ -1,4 +1,4 @@
-<html ng-app='layg'>
+<html ng-app='arifu'>
 
 <!-- Head -->
 <head>

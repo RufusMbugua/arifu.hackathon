@@ -1,22 +1,21 @@
-/**
- * @ngdoc app ClientApp
- * @name ClientApp
- * @requires ui.router
- * @requires restangular
- * @requires smart-table
- * @requires chart.js
- * @requires textAngular
- * @requires angularMoment
- * @requires ui.bootstrap
- * @requires slick
- * @requires mgo-angular-wizard
- */
+var PATH = {
+  _modules:'app/',
+  _globals:'app/'
+}
 
-var app = angular.module("layg", [
+var VIEW ={
+  _modules:function(path){
+    return PATH._modules+path+'.tpl.html'
+  },
+  _globals:function(path){
+    return PATH._globals+path+'.tpl.html'
+  }
+}
+
+angular.module("arifu", [
   'ui.router',
   'restangular',
   'smart-table',
-  'chart.js',
   'textAngular',
   'angularMoment',
   'ui.bootstrap',
@@ -26,39 +25,12 @@ var app = angular.module("layg", [
   'permission',
   'LocalStorageModule',
   'angularValidator',
+  'btford.socket-io',
   'angular-loading-bar',
-  'angular.filter',
-  'angular-timeline',
-  'angular-scroll-animate'
+  'arifu.users',
+  'arifu.dashboard'
 ]);
 
-/**
- * @ngdoc       factory
- * @description Listening and Diverting channel messages
- * @name        socket
- * @param       socketFactory {factory}
- * @memberof    Client
- * @example
- * app.factory('SOCKET_NAME', function (socketFactory) {
- * var myIoSocket = io.connect('YOUR IP ADDRESS');
- * //Instance of the socket
- * socket = socketFactory({
- *   ioSocket: myIoSocket
- * });
- * //Return the socket variable
- * return socket;
- * @returns     {object} socket
- });
- */
-// app.factory('socket', function(socketFactory) {
-//   var myIoSocket = io.connect('localhost');
-//
-//   socket = socketFactory({
-//     ioSocket: myIoSocket
-//   });
-//   // socket = socketFactory;
-//   return socket;
-// });
 
 /**
  * @ngdoc run
@@ -67,82 +39,43 @@ var app = angular.module("layg", [
  * @requires $rootScope
  * @memberof ClientApp
  */
-app.run(['$http', '$rootScope', '$state', function($http, rootScope,
+angular.module("arifu").run(['$http', '$rootScope', '$state', function($http,
+  rootScope,
   state) {
   rootScope.date = new Date();
-  rootScope.title = 'LAYG';
+  rootScope.title = 'KE.scrow';
   rootScope.messages = [];
   rootScope.menu = [];
   rootScope.errors = [];
   rootScope.state = state;
 }]);
+
+angular.module("arifu").controller('appCtrl', ['$location', function(
+  $location) {
+    console.log('Hello');
+}]);
 ;// I control the main demo.
-app.controller("publicCtrl", ['$scope', '$filter', '$timeout', '$state',
+angular.module('arifu.dashboard',[]).controller("dashboardCtrl", ['$scope', '$filter', '$timeout', '$state',
   'Restangular', '$http', '$rootScope',
   function(scope, filter, timeout, state, Restangular, $http, rootScope) {
 
-    scope.items = [{
-        'image': 'images/slide_1.jpg'
-      }, {
-        'image': 'images/slide_2.jpg'
-      },
-      // {
-      //   'title': 'When to use Kescrow?',
-      //   // 'description': 'When buying or selling high value items<p></p>' +
-      //   //   'When buying or selling items that require shipping or delivery<p></p>' +
-      //   //   'When dealing with questionable parties<p></p>' +
-      //   //   'Where there is a delay between payment and the provision of services, e.g. construction<p></p>' +
-      //   //   'Where there is a delay in the transfer of an item, e.g. registration of a vehicle<p></p>' +
-      //   //   'Whenever there is a risk of fraud<p></p>' +
-      //   //   'Whenever you feel nervous about a transaction'
-      // }
-    ];
+    scope.subjects=[];
+
   }
 ]);
-;/**
- * @ngdoc directive
- * @name isActiveNav
- * @param $location
- * @memberof ClientApp
- */
-app.directive('isActiveNav', ['$location', function($location) {
-  return {
-    restrict: 'A',
-    link: function(scope, element) {
-      scope.location = $location;
-      scope.$watch('location.path()', function(currentPath) {
-        if ('#' + currentPath == element[0].hash) {
-          element.parent().addClass('active');
-        } else {
-          element.parent().removeClass('active');
-        }
-      });
-    }
-  };
-}]);
+;angular.module('arifu.dashboard').config(function($stateProvider, $urlRouterProvider) {
 
-/**
- * @ngdoc directive
- * @name isActiveLink
- * @param $location
- * @memberof ClientApp
- */
-app.directive('isActiveLink', ['$location', function($location) {
-  return {
-    restrict: 'A',
-    link: function(scope, element) {
-      scope.location = $location;
-      scope.$watch('location.path()', function(currentPath) {
-        if ('#' + currentPath == element[0].hash) {
-          element.addClass('active');
-        } else {
-          element.removeClass('active');
-        }
-      });
+  $stateProvider.state('dashboard', {
+    url: '/dashboard',
+    views: {
+      '': {
+        templateUrl: VIEW._modules('dashboard/dashboard.main')
+      }
     }
-  };
-}]);
-;app.directive('pushMenu', ['$rootScope', '$timeout', function(rootScope,
+
+  })
+});
+;angular.module("arifu").directive('pushMenu', ['$rootScope', '$timeout', function(rootScope,
   timeout) {
   return {
     restrict: 'A',
@@ -194,7 +127,7 @@ app.directive('isActiveLink', ['$location', function($location) {
     }
   };
 }]);
-;app.directive('rmValidate', ['$rootScope', '$timeout', function(rootScope,
+;angular.module("arifu").directive('rmValidate', ['$rootScope', '$timeout', function(rootScope,
   timeout) {
   return {
     restrict: 'A',
@@ -216,40 +149,61 @@ app.directive('isActiveLink', ['$location', function($location) {
   };
 }]);
 ;/**
+ * @ngdoc directive
+ * @name isActiveNav
+ * @param $location
+ * @memberof ClientApp
+ */
+angular.module("arifu").directive('isActiveNav', ['$location', function(
+  $location) {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      scope.location = $location;
+      scope.$watch('location.path()', function(currentPath) {
+        if ('#' + currentPath == element[0].hash) {
+          element.parent().addClass('active');
+        } else {
+          element.parent().removeClass('active');
+        }
+      });
+    }
+  };
+}]);
+
+/**
+ * @ngdoc directive
+ * @name isActiveLink
+ * @param $location
+ * @memberof ClientApp
+ */
+angular.module("arifu").directive('isActiveLink', ['$location', function(
+  $location) {
+  return {
+    restrict: 'A',
+    link: function(scope, element) {
+      scope.location = $location;
+      scope.$watch('location.path()', function(currentPath) {
+        if ('#' + currentPath == element[0].hash) {
+          element.addClass('active');
+        } else {
+          element.removeClass('active');
+        }
+      });
+    }
+  };
+}]);
+;/**
  * @ngdoc config
  * @name mainRouteConfig
  * @memberof ClientApp
  * @param $stateProvider {service}
  * @param $urlRouterProvider {service}
  */
-app.config(function($stateProvider, $urlRouterProvider) {
-  $urlRouterProvider.otherwise("/public");
-    /**
-     * @ngdoc state
-     * @name public
-     * @memberof ClientApp
-     * @description Publicly Accessible Route
-     */
-    $stateProvider.state('public', {
-      url: '/public',
-      views: {
-        '': {
-          controller: 'publicCtrl',
-          templateUrl: 'app/partials/public/index.html',
-        },
-        'header@public': {
-          templateUrl: 'app/partials/public/header.html',
-        },
-        'banner@public': {
-          templateUrl: 'app/partials/public/banner.html',
-        },
-        'footer@public': {
-          templateUrl: 'app/partials/public/footer.html',
-        }
-      }
-    });
-});
-;app.factory('senChart', ['$rootScope', function(rootScope) {
+ angular.module("arifu").config(function($stateProvider, $urlRouterProvider) {
+   $urlRouterProvider.otherwise("/login");
+ });
+;angular.module("arifu").factory('senChart', ['$rootScope', function(rootScope) {
   var senChart = {};
 
   senChart.plot = function plot(series, type) {
@@ -312,7 +266,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
   return senChart;
 }])
-;app.factory('errorInterceptor', ['$q', '$log', '$rootScope', '$timeout',
+;angular.module("arifu").factory('errorInterceptor', ['$q', '$log', '$rootScope', '$timeout',
   '$injector',
   function(q, log, rootScope, timeout, injector) {
     rootScope.error = null;
@@ -377,10 +331,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
   }
 ]);
 
-app.config(['$httpProvider', function(httpProvider) {
+angular.module("arifu").config(['$httpProvider', function(httpProvider) {
   httpProvider.interceptors.push('errorInterceptor');
 }]);
-;app.factory('senFilter', ['$rootScope', '$filter', function(rootScope, filter) {
+;angular.module("arifu").factory('senFilter', ['$rootScope', '$filter', function(rootScope, filter) {
   var senFilter = {};
   // Group By Filter
   senFilter.groupBy = filter('groupBy');
@@ -398,7 +352,7 @@ app.config(['$httpProvider', function(httpProvider) {
   }
   return senFilter;
 }]);
-;app.factory('Requests', ['$http', '$rootScope', function(http, rootScope) {
+;angular.module("arifu").factory('Requests', ['$http', '$rootScope', function(http, rootScope) {
   var Requests = {};
   Requests.data = [];
   Requests.post_data = []
@@ -532,7 +486,80 @@ app.config(['$httpProvider', function(httpProvider) {
   }
   return Requests;
 }])
-;angular.module('templates-dist', ['../public/app/partials/public/banner.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/index.html']);
+;angular.module('arifu.users',[]).controller('usersCtrl', ['$scope', 'Requests',
+  '$state',
+  function(scope, Requests, state) {
+    scope.user = {};
+
+    scope.filterOptions = ['Date', 'Tags'];
+
+    function get() {
+      var payload = {};
+      Requests.get('questions', payload, function(data) {
+        scope.questions = data.success.data;
+      });
+    }
+
+    scope.add = function add() {
+      var payload = scope.question;
+      Requests.post('questions', payload, function(data) {
+        if(data.success){
+          state.go('admin.questions.list')
+        }
+      });
+    }
+
+    scope.login = function login() {
+      var payload = scope.user;
+      Requests.post('auth', payload, function(data) {
+        if(data.success){
+          scope.user = data.user;
+          state.go('admin.dashboard')
+        }
+
+      });
+    }
+
+    scope.edit = function edit() {
+      var payload = scope.question;
+      Requests.put('questions/' + payload.id, payload, function(data) {
+        scope.question = data.success.data;
+      });
+    }
+
+    scope.view = function view(question) {
+      scope.currentQuestion = question;
+      state.go('questions.view')
+    }
+  }
+])
+;angular.module('arifu.users').config(function($stateProvider, $urlRouterProvider) {
+
+  $stateProvider.state('users', {
+    url: '/users',
+    views: {
+      '': {
+        templateUrl: VIEW._modules('users/users.main')
+      }
+    }
+
+  }).
+  state('login', {
+    url: '/login',
+    views: {
+      '': {
+        controller: 'usersCtrl',
+        templateUrl: VIEW._modules('users/users.login')
+      }
+    }
+  })
+});
+;angular.module('templates-dist', ['../public/app/partials/dashboard/index.html', '../public/app/partials/public/banner.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/index.html']);
+
+angular.module("../public/app/partials/dashboard/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/dashboard/index.html",
+    "");
+}]);
 
 angular.module("../public/app/partials/public/banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/banner.html",

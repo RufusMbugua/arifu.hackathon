@@ -1,4 +1,4 @@
-app.directive('rmValidate', ['$rootScope', '$timeout', function(rootScope,
+angular.module("arifu").directive('rmValidate', ['$rootScope', '$timeout', function(rootScope,
   timeout) {
   return {
     restrict: 'A',

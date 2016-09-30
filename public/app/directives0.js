@@ -4,7 +4,8 @@
  * @param $location
  * @memberof ClientApp
  */
-app.directive('isActiveNav', ['$location', function($location) {
+angular.module("arifu").directive('isActiveNav', ['$location', function(
+  $location) {
   return {
     restrict: 'A',
     link: function(scope, element) {
@@ -26,7 +27,8 @@ app.directive('isActiveNav', ['$location', function($location) {
  * @param $location
  * @memberof ClientApp
  */
-app.directive('isActiveLink', ['$location', function($location) {
+angular.module("arifu").directive('isActiveLink', ['$location', function(
+  $location) {
   return {
     restrict: 'A',
     link: function(scope, element) {

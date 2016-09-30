@@ -1,4 +1,9 @@
-angular.module('templates-dist', ['../public/app/partials/public/banner.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/index.html']);
+angular.module('templates-dist', ['../public/app/partials/dashboard/index.html', '../public/app/partials/public/banner.html', '../public/app/partials/public/footer.html', '../public/app/partials/public/header.html', '../public/app/partials/public/index.html']);
+
+angular.module("../public/app/partials/dashboard/index.html", []).run(["$templateCache", function($templateCache) {
+  $templateCache.put("../public/app/partials/dashboard/index.html",
+    "");
+}]);
 
 angular.module("../public/app/partials/public/banner.html", []).run(["$templateCache", function($templateCache) {
   $templateCache.put("../public/app/partials/public/banner.html",

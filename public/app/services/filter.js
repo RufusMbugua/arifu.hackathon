@@ -1,4 +1,4 @@
-app.factory('senFilter', ['$rootScope', '$filter', function(rootScope, filter) {
+angular.module("arifu").factory('senFilter', ['$rootScope', '$filter', function(rootScope, filter) {
   var senFilter = {};
   // Group By Filter
   senFilter.groupBy = filter('groupBy');

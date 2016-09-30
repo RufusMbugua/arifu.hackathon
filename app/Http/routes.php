@@ -24,4 +24,6 @@ $api->version('v1', ['namespace' => 'App\Http\Controllers'], function ($api) {
 
 });
 Route::get('/', 'TestController@index');
-Route::get('/contents', 'ContentController@index');
+// Authentication routes...
+Route::post('login', 'AuthController@login');
+Route::get('logout', 'AuthController@logout');
