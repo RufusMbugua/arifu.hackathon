@@ -1,0 +1,25 @@
+{
+    "name": "App\\AuditTrail",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Test.php",
+    "relative_file": null,
+    "hash": "bd22d2f23110ee784d01dc04bafb3b5daf05f551",
+    "parent": "Illuminate\\Database\\Eloquent\\Model",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Model": "Illuminate\\Database\\Eloquent\\Model"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

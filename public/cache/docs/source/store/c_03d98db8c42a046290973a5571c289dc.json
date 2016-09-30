@@ -1,0 +1,102 @@
+{
+    "name": "App\\Services\\Registrar",
+    "line": 7,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Services",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Services\/Registrar.php",
+    "relative_file": null,
+    "hash": "6cc11060369334c450f74fb416087a7eb8b26383",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "User": "App\\User",
+        "Validator": "Validator",
+        "RegistrarContract": "Illuminate\\Contracts\\Auth\\Registrar"
+    },
+    "errors": [],
+    "interfaces": {
+        "Illuminate\\Contracts\\Auth\\Registrar": "Illuminate\\Contracts\\Auth\\Registrar"
+    },
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "validator": {
+            "name": "validator",
+            "line": 15,
+            "short_desc": "Get a validator for an incoming registration request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Illuminate\\Contracts\\Validation\\Validator",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 15,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "create": {
+            "name": "create",
+            "line": 30,
+            "short_desc": "Create a new user instance after a valid registration.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\App\\User",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "data": {
+                    "name": "data",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "array",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "array",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

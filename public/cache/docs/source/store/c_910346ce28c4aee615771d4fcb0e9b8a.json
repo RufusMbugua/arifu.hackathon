@@ -1,0 +1,23 @@
+{
+    "name": "App\\Events\\Event",
+    "line": 3,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Events",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Events\/Event.php",
+    "relative_file": null,
+    "hash": "4a8bbc04a9726687bb4ef0d419e9921145711e8d",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

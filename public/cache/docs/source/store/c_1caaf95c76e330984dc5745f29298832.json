@@ -1,0 +1,23 @@
+{
+    "name": "Senshi\\Data\\Import",
+    "line": 4,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Data",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Data\/Import.php",
+    "relative_file": null,
+    "hash": "89da8e8360b737584b4ffc2ec727aba3f8acf2b2",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

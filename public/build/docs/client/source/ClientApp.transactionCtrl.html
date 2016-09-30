@@ -1,0 +1,163 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="../" />
+    <title>Kescrow Client Docs: Source:notifications.js</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css" />
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet" />
+    <script src="js/prettify.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+          <h3>module: account</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="account.home.html">account.home</a></li>
+                <li><a href="account.transaction.html">account.transaction</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <h4>app ClientApp</h4>
+            <ul>
+                <li><a href="ClientApp.html">ClientApp</a></li>
+            </ul>
+            <h4>run</h4>
+            <ul>
+                <li><a href="Users%20RUN.html">Users RUN</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientApp</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="ClientApp.account.html">ClientApp.account</a></li>
+                <li><a href="ClientApp.public.html">ClientApp.public</a></li>
+                <li><a href="ClientApp.register.html">ClientApp.register</a></li>
+            </ul>
+            <h4>directive</h4>
+            <ul>
+                <li><a href="ClientApp.isActiveLink.html">ClientApp.isActiveLink</a></li>
+                <li><a href="ClientApp.isActiveNav.html">ClientApp.isActiveNav</a></li>
+            </ul>
+            <h4>run</h4>
+            <ul>
+                <li><a href="ClientApp.Main.html">ClientApp.Main</a></li>
+            </ul>
+            <h4>config</h4>
+            <ul>
+                <li><a href="ClientApp.mainRouteConfig.html">ClientApp.mainRouteConfig</a></li>
+            </ul>
+            <h4>controller</h4>
+            <ul>
+                <li><a href="ClientApp.transactionCtrl.html">ClientApp.transactionCtrl</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientApp.account.transaction</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="ClientApp.account.transaction.new.html">ClientApp.account.transaction.new</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientAppr</h3>
+        <ul>
+            <h4>controller</h4>
+            <ul>
+                <li><a href="ClientAppr.accountCtrl.html">ClientAppr.accountCtrl</a></li>
+            </ul>
+        </ul>
+    </nav>
+    <h1 class="title">
+      <span style="color:#333">Source:notifications.js</span>
+    </h1>
+    <div id="main">
+      <article>
+        <pre class="prettyprint source linenums"><code>/**
+ * @ngdoc controller
+ * @name transactionCtrl
+ * @description Handles All transactions
+ * @param {service} $scope
+ * @param {service} Requests
+ * @memberof ClientApp
+ */
+app.controller('notificationsCtrl', ['$scope', 'Requests', function(scope,
+                                                                    Requests) {
+    scope.messages.unread = [ {
+        'subject':'Hi There',
+        'content':'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent non purus sit amet enim bibendum laoreet. Donec dui justo, sodales sed magna faucibus, rhoncus tempus enim. Quisque congue molestie lorem, sed auctor tortor consectetur vitae. Integer ullamcorper est diam, ut tempus felis feugiat eu. Proin aliquam tristique augue, eget dictum nunc pulvinar venenatis. Integer pretium arcu sed velit vestibulum, ac rhoncus nisi vehicula. Aliquam et dolor sit amet ipsum facilisis venenatis vitae in sem. Nulla suscipit dolor id neque aliquet finibus. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Duis non venenatis purus. Suspendisse at suscipit velit. Etiam vitae magna nec eros mollis iaculis. In hac habitasse platea dictumst. Nunc non ultricies purus, quis efficitur odio. Mauris fringilla dapibus ante, imperdiet pretium augue congue at. Maecenas at orci et felis vestibulum luctus sit amet eget ex.',
+        'date':moment().fromNow()
+    },
+        {
+            'subject':'Guy',
+            'content':'Blah',
+            'date':moment().fromNow()
+        },
+        {
+            'subject':'Guy',
+            'content':'Blah',
+            'date':moment().fromNow()
+        },
+        {
+            'subject':'Hi There',
+            'content':'Blah',
+            'date':moment().fromNow()
+        }
+    ];
+    scope.messages.read = [ {
+        'subject':'U just saw dis',
+        'content':'Blah',
+        'date':moment().fromNow()
+    },
+        {
+            'subject':'U know dis',
+            'content':'Blah',
+            'date':moment().fromNow()
+        },
+        {
+            'subject':'Bye There',
+            'content':'Blah',
+            'date':moment().fromNow()
+        }
+    ];
+    scope.current=[];
+    scope.current.title="Unread";
+    scope.current.messages = scope.messages.unread;
+    scope.current.message={};
+    scope.list=function list(messages_list){
+        scope.current.title=messages_list.toUpperCase();
+        switch(messages_list){
+            case 'read':
+                scope.current.messages = scope.messages.read;
+                break;
+            case 'unread':
+                scope.current.messages = scope.messages.unread;
+                break;
+            case 'archived':
+                scope.current.messages = scope.messages.archived;
+                break;
+        }
+    }
+    scope.show = function show(message){
+        scope.current.message=message;
+        scope.current.message.show=true;
+    }
+}]);
+</code></pre>
+      </article>
+    </div>
+    <footer style="clear:both">
+      Documentation generated by
+      <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+      using 
+      <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a> 
+    </footer>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,170 @@
+nav#account{
+  @extend nav#main-style;
+  background:$carrara;
+  border-bottom:1px solid $silver;
+  li{
+    a{
+      color:$madison;
+      padding:15px !important;
+    }
+  }
+  li:hover,li.active{
+    a{
+      color:$flamingo !important;
+      font-weight: bold;
+    }
+  }
+  .navbar-brand{
+    width:200px;
+    .row{
+      margin:0;
+      .text{
+        padding:5px 10px;
+      }
+    }
+    border-right:1px solid $silver;
+    padding:0 !important;
+    color:#333;
+    .btn{
+      color:$silver !important;
+      background: none;
+      font-size:1.3em;
+      padding:10px 0;
+    }
+  }
+}
+nav#main{
+  z-index:100;
+  position:absolute;
+  top:0;
+  width:100%;
+  padding:1%;
+  background:transparent;;
+  margin-bottom:1em;
+  border:none;
+  @extend nav#main-style;
+  .navbar-brand{
+    background:white;
+    opacity:0.9;
+    border-radius:50%;
+    padding:0;
+    .image-wrapper{
+      width:100px;
+      height:100px;
+      img{
+        width:100%;
+      }
+    }
+
+  }
+  top:0;
+  left:0;
+  width:100%;
+  z-index:3001;
+}
+nav#main-style{
+  .navbar-collapse{
+    border:none !important;
+  }
+  .navbar-brand{
+    height:auto !important;
+  }
+
+  li{
+    list-style: none;
+    a{
+      text-decoration: none;
+      i{
+        padding-right:5px;
+      }
+    }
+  }
+}
+
+
+nav#footer{
+  background:#2c3e50;
+  color:$madison;
+  li{
+    a{
+      color:white;
+    }
+  }
+  li.active,li:hover{
+    a{
+      color:wheat !important;
+      background:transparent !important;
+    }
+  }
+  padding:2.5% 5%;
+  margin:0;
+}
+
+#main,.menu{
+  @include transition-property(left);
+  @include transition-duration(0.5s);
+  @include transition-timing-function(ease-in);
+}
+// Menu
+.menu{
+  width:200px;
+  top:0;
+  left:0;
+  border-right:1px solid $silver;
+  border-bottom:1px solid $silver;
+  height:100%;
+  .title{
+    text-align:center;
+    border-bottom:1px solid $light-gray;
+  }
+  .panel{
+    border:none;
+    div{
+      border:none;
+    }
+  }
+  .panel-body{
+    border-radius:0;
+    padding:0;
+  }
+  h1,h2,h3,h4,h5,h6{
+    i{
+      padding-right:5px;
+    }
+  }
+  .nav-pills{
+    li{
+      text-align:right;
+      a{
+        padding:15px 20px;
+        border-radius:0;
+      }
+      border-bottom:1px solid $light-gray;
+    }
+    li+li{
+      margin:0;
+    }
+    li.active{
+      a{
+        background:$silver;
+        color:$dark-gray;
+      }
+    }
+  }
+}
+
+.menu-fixed{
+  position:absolute;
+}
+.menu-hidden{
+  left:-200;
+}
+// Breadcrumb
+.breadcrumb-wrapper{
+  padding:2.5% 10%;
+  .breadcrumb{
+    background: white;
+    border:1px solid $silver;
+    border-radius:0;
+  }
+}

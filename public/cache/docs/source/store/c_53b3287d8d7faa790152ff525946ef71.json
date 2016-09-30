@@ -1,0 +1,50 @@
+{
+    "name": "Senshi\\Transformers\\DependentTransformer",
+    "line": 12,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Transformers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Transformers\/DependentTransformer.php",
+    "relative_file": null,
+    "hash": "f9be30eb189164f9259c21b599c372b2ed942b47",
+    "parent": "Senshi\\Transformers\\Transformer",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "transform": {
+            "name": "transform",
+            "line": 14,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "member": {
+                    "name": "member",
+                    "line": 14,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

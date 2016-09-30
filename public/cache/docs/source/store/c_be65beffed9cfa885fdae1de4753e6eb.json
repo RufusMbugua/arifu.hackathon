@@ -1,0 +1,99 @@
+{
+    "name": "App\\Providers\\RouteServiceProvider",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Providers\/RouteServiceProvider.php",
+    "relative_file": null,
+    "hash": "2365918a8cbe6e30f0ea1133c4094fd1ae04cae4",
+    "parent": "Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Router": "Illuminate\\Routing\\Router",
+        "ServiceProvider": "Illuminate\\Foundation\\Support\\Providers\\RouteServiceProvider"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 23,
+            "short_desc": "Define your route model bindings, pattern filters, etc.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "router": {
+                    "name": "router",
+                    "line": 23,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Providers\\Illuminate\\Routing\\Router",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Routing\\Router",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "map": {
+            "name": "map",
+            "line": 36,
+            "short_desc": "Define the routes for the application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "router": {
+                    "name": "router",
+                    "line": 36,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Providers\\Illuminate\\Routing\\Router",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Routing\\Router",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

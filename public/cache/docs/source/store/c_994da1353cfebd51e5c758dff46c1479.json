@@ -1,0 +1,23 @@
+{
+    "name": "Senshi\\Files\\FileReader",
+    "line": 8,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Files",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Files\/FileReader.php",
+    "relative_file": null,
+    "hash": "be30c9a5ee795710c0e1dec537c134bafd6abe4a",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

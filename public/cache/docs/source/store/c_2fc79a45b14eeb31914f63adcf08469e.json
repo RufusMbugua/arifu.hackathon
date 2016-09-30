@@ -1,0 +1,45 @@
+{
+    "name": "App\\Providers\\ConfigServiceProvider",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Providers\/ConfigServiceProvider.php",
+    "relative_file": null,
+    "hash": "35451278003b170c0e314d96e05d65508a2a161d",
+    "parent": "Illuminate\\Support\\ServiceProvider",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ServiceProvider": "Illuminate\\Support\\ServiceProvider"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "register": {
+            "name": "register",
+            "line": 16,
+            "short_desc": "Overwrite any vendor \/ package configuration.",
+            "long_desc": "This service provider is intended to provide a convenient location for you\nto overwrite any \"vendor\" or package configuration that you may want to\nmodify before the application handles the incoming request \/ command.",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

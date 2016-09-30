@@ -1,0 +1,63 @@
+{
+    "name": "App\\Providers\\EventServiceProvider",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Providers\/EventServiceProvider.php",
+    "relative_file": null,
+    "hash": "0070a9577ee78d2e40edf9cb63dbb3e3f8f50322",
+    "parent": "Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "DispatcherContract": "Illuminate\\Contracts\\Events\\Dispatcher",
+        "ServiceProvider": "Illuminate\\Foundation\\Support\\Providers\\EventServiceProvider"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 25,
+            "short_desc": "Register any other events for your application.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "events": {
+                    "name": "events",
+                    "line": 25,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Providers\\Illuminate\\Contracts\\Events\\Dispatcher",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Events\\Dispatcher",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

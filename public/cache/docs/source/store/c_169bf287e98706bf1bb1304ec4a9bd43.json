@@ -1,0 +1,50 @@
+{
+    "name": "Senshi\\Transformers\\FacilityTransformer",
+    "line": 13,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Transformers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Transformers\/FacilityTransformer.php",
+    "relative_file": null,
+    "hash": "6e4dc04b8988e5c35293b6a63fdcc944b13685b0",
+    "parent": "Senshi\\Transformers\\Transformer",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": [],
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "transform": {
+            "name": "transform",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "facility": {
+                    "name": "facility",
+                    "line": 15,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

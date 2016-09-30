@@ -1,0 +1,290 @@
+<!doctype html>
+<html>
+  <head>
+    <base href="../" />
+    <title>Kescrow Client Docs: Source:users.js</title>
+    <link type="text/css" rel="stylesheet" href="css/jsdoc-default.css" />
+    <link href="css/prettify-tomorrow.css" type="text/css" rel="stylesheet" />
+    <script src="js/prettify.js"></script>
+  </head>
+  <body>
+    <nav>
+      <h2><a href="index.html">Index</a></h2>
+          <h3>module: account</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="account.home.html">account.home</a></li>
+                <li><a href="account.transaction.html">account.transaction</a></li>
+            </ul>
+        </ul>
+        <ul>
+            <h4>app ClientApp</h4>
+            <ul>
+                <li><a href="ClientApp.html">ClientApp</a></li>
+            </ul>
+            <h4>run</h4>
+            <ul>
+                <li><a href="Users%20RUN.html">Users RUN</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientApp</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="ClientApp.account.html">ClientApp.account</a></li>
+                <li><a href="ClientApp.public.html">ClientApp.public</a></li>
+                <li><a href="ClientApp.register.html">ClientApp.register</a></li>
+            </ul>
+            <h4>directive</h4>
+            <ul>
+                <li><a href="ClientApp.isActiveLink.html">ClientApp.isActiveLink</a></li>
+                <li><a href="ClientApp.isActiveNav.html">ClientApp.isActiveNav</a></li>
+            </ul>
+            <h4>run</h4>
+            <ul>
+                <li><a href="ClientApp.Main.html">ClientApp.Main</a></li>
+            </ul>
+            <h4>config</h4>
+            <ul>
+                <li><a href="ClientApp.mainRouteConfig.html">ClientApp.mainRouteConfig</a></li>
+            </ul>
+            <h4>controller</h4>
+            <ul>
+                <li><a href="ClientApp.transactionCtrl.html">ClientApp.transactionCtrl</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientApp.account.transaction</h3>
+        <ul>
+            <h4>state</h4>
+            <ul>
+                <li><a href="ClientApp.account.transaction.new.html">ClientApp.account.transaction.new</a></li>
+            </ul>
+        </ul>
+          <h3>module: ClientAppr</h3>
+        <ul>
+            <h4>controller</h4>
+            <ul>
+                <li><a href="ClientAppr.accountCtrl.html">ClientAppr.accountCtrl</a></li>
+            </ul>
+        </ul>
+    </nav>
+    <h1 class="title">
+      <span style="color:#333">Source:users.js</span>
+    </h1>
+    <div id="main">
+      <article>
+        <pre class="prettyprint source linenums"><code>/**
+ * @ngdoc controller
+ * @name transactionCtrl
+ * @description Handles All transactions
+ * @param {service} $scope
+ * @memberof ClientApp
+ */
+app.controller('usersCtrl', ['$scope', '$rootScope', 'Requests', '$state',
+  'localStorageService', '$http', '$timeout',
+  function(
+    scope,
+    rootScope,
+    Requests,
+    state,
+    localStorageService,
+    http,
+    timeout) {
+    get();
+    /**
+     * method
+     * usersCtrl.get
+     */
+    function get() {
+      var payload = {};
+      payload.request_type = "all";
+      Requests.get('users', payload, function(data) {
+        if (data) {
+          rootScope.users = data.data;
+        }
+      });
+    }
+    /**
+     * method
+     * usersCtrl.login
+     */
+    scope.login = function login() {
+      var payload = scope.user;
+      payload.top_level = true;
+      Requests.post('login', payload, function(data) {
+        if (data) {
+          rootScope.user = data
+          localStorageService.set('user', data)
+          http.defaults.headers.post = {
+            'Authorization': 'Bearer ' + data.token
+          };
+          http.defaults.headers.get = {
+            'Authorization': 'Bearer ' + data.token
+          }
+          http.defaults.headers.put = {
+            'Authorization': 'Bearer ' + data.token
+          }
+          scope.success = {
+            icon: "ion-checkmark",
+            type: "success",
+            message: 'Login Successful'
+          }
+          rootScope.error = null;
+          timeout(function() {
+            state.go('account.home')
+          }, 2000)
+        }
+      })
+    }
+    scope.add = function add() {
+      var payload = scope.chosen;
+      payload.request_type = "adminRegister";
+      Requests.post('users', payload, function(data) {
+        console.log(payload)
+      })
+    }
+    scope.update = function update() {
+      var payload = scope.chosen;
+      payload.request = "updater"
+      Requests.put('users', payload, function(data) {
+        console.log(data)
+      })
+    }
+    scope.view = function view(user) {
+      scope.chosen = user;
+      localStorageService.set('user.chosen', user);
+      state.go('account.users.edit')
+    }
+    get_roles()
+    function get_roles() {
+      if (rootScope.user) {
+        var payload = {};
+        payload.request_type = "all";
+        Requests.get('access', payload, function(data) {
+          scope.roles = data.data;
+        })
+      }
+    }
+    scope.new = function new_user() {
+      scope.chosen = {};
+      localStorageService.set('user.chosen', scope.chosen);
+      state.go('account.users.new')
+    }
+    retrieve_chosen_user();
+    function retrieve_chosen_user() {
+      var user = localStorageService.get('user.chosen');
+      scope.chosen = user;
+    }
+    check_if_logged_in()
+    function check_if_logged_in() {
+      if (state.current.name == 'login') {
+        if (rootScope.user) {
+          state.go('account.home')
+        } else {
+          http.defaults.headers.post = {
+            "Content-Type": "application/json;charset=utf-8"
+          };
+          http.defaults.headers.get = {
+            "Content-Type": "application/json;charset=utf-8"
+          };
+          http.defaults.headers.put = {
+            "Content-Type": "application/json;charset=utf-8"
+          };
+        }
+      }
+    }
+    /**
+     * method
+     * usersCtrl.logout
+     */
+    scope.logout = function logout() {
+      var payload = {};
+      payload.top_level = true;
+      rootScope.user = false;
+      localStorageService.remove('user');
+      Requests.get('logout', payload, function(data) {
+        if (data) {
+          console.log(data)
+          state.go('login')
+        }
+      })
+    }
+  }
+]);
+/**
+ * @ngdoc run
+ * @name  Users RUN
+ */
+app.run(['$rootScope', 'localStorageService', '$http', 'Permission', function(
+  rootScope,
+  localStorageService,
+  http,
+  Permission) {
+  if (localStorageService.get('user') != null) {
+    rootScope.user = localStorageService.get('user')
+    var user = rootScope.user;
+    if (!rootScope.user) {
+      http.defaults.headers.post = {
+        "Content-Type": "application/json;charset=utf-8"
+      };
+      http.defaults.headers.get = {
+        "Content-Type": "application/json;charset=utf-8"
+      };
+      http.defaults.headers.put = {
+        "Content-Type": "application/json;charset=utf-8"
+      };
+    }
+    if (user) {
+      rootScope.token = user.token;
+      http.defaults.headers.post = {
+        'Authorization': 'Bearer ' + rootScope.token
+      };
+      http.defaults.headers.get = {
+        'Authorization': 'Bearer ' + rootScope.token
+      }
+      http.defaults.headers.put = {
+        'Authorization': 'Bearer ' + rootScope.token
+      }
+    }
+    //Permission.defineRole('user', function (stateParams) {
+    //        // If the returned value is *truthy* then the user has the role, otherwise they don't
+    //        if(rootScope.user){
+    //            if (rootScope.user.role == "user"){
+    //                return true
+    //            }
+    //        }
+    //        else{
+    //            return false
+    //        }
+    //    })
+    //    .defineRole('admin', function (stateParams) {
+    //        // If the returned value is *truthy* then the user has the role, otherwise they don't
+    //        if(rootScope.user){
+    //            if (rootScope.user.role == "admin"){
+    //                return true
+    //            }
+    //        }
+    //        else{
+    //            return false
+    //        }
+    //    });
+  }
+}])
+</code></pre>
+      </article>
+    </div>
+    <footer style="clear:both">
+      Documentation generated by
+      <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.3.2</a>
+      using 
+      <a href="https://github.com/allenhwkim/angular-jsdoc">Angular-JSDoc template</a> 
+    </footer>
+    <!--%= prettyJson %-->
+    <script>
+      prettyPrint();
+      var lineNo = window.location.hash.match(/#line([0-9]+)$/);
+      lineNo && document.querySelector("ol li:nth-child("+(lineNo[1])+")").scrollIntoView();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,83 @@
+{
+    "name": "App\\Http\\Controllers\\Auth\\AuthController",
+    "line": 8,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers\\Auth",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Controllers\/Auth\/AuthController.php",
+    "relative_file": null,
+    "hash": "e3a4628acc5ce6a03376040bc60eb6338554a598",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Controller": "App\\Http\\Controllers\\Controller",
+        "Guard": "Illuminate\\Contracts\\Auth\\Guard",
+        "Registrar": "Illuminate\\Contracts\\Auth\\Registrar",
+        "AuthenticatesAndRegistersUsers": "Illuminate\\Foundation\\Auth\\AuthenticatesAndRegistersUsers"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Illuminate\\Foundation\\Auth\\AuthenticatesAndRegistersUsers": "Illuminate\\Foundation\\Auth\\AuthenticatesAndRegistersUsers"
+    },
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 30,
+            "short_desc": "Create a new authentication controller instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "auth": {
+                    "name": "auth",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Controllers\\Auth\\Illuminate\\Contracts\\Auth\\Guard",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\Guard",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "registrar": {
+                    "name": "registrar",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Controllers\\Auth\\Illuminate\\Contracts\\Auth\\Registrar",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\Registrar",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

@@ -1,0 +1,30 @@
+{
+    "name": "App\\Http\\Controllers\\Controller",
+    "line": 7,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Controllers\/Controller.php",
+    "relative_file": null,
+    "hash": "f4584d3f26205cd329a786c414728a5e714abee0",
+    "parent": "Illuminate\\Routing\\Controller",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "DispatchesCommands": "Illuminate\\Foundation\\Bus\\DispatchesCommands",
+        "BaseController": "Illuminate\\Routing\\Controller",
+        "ValidatesRequests": "Illuminate\\Foundation\\Validation\\ValidatesRequests"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Illuminate\\Foundation\\Bus\\DispatchesCommands": "Illuminate\\Foundation\\Bus\\DispatchesCommands",
+        "Illuminate\\Foundation\\Validation\\ValidatesRequests": "Illuminate\\Foundation\\Validation\\ValidatesRequests"
+    },
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

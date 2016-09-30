@@ -1,0 +1,116 @@
+{
+    "name": "App\\Http\\Middleware\\RedirectIfAuthenticated",
+    "line": 7,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Middleware",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Middleware\/RedirectIfAuthenticated.php",
+    "relative_file": null,
+    "hash": "1e070140f986e75a80917dc29d82365821170d01",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Closure": "Closure",
+        "Guard": "Illuminate\\Contracts\\Auth\\Guard",
+        "RedirectResponse": "Illuminate\\Http\\RedirectResponse"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 22,
+            "short_desc": "Create a new filter instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "auth": {
+                    "name": "auth",
+                    "line": 22,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Middleware\\Illuminate\\Contracts\\Auth\\Guard",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\Guard",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "handle": {
+            "name": "handle",
+            "line": 34,
+            "short_desc": "Handle an incoming request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 34,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Http\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "next": {
+                    "name": "next",
+                    "line": 34,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

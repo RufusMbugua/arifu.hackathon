@@ -1,0 +1,83 @@
+{
+    "name": "App\\Http\\Controllers\\Auth\\PasswordController",
+    "line": 8,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Controllers\\Auth",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Controllers\/Auth\/PasswordController.php",
+    "relative_file": null,
+    "hash": "6de11ae5b64c5eb946726ce52c8acbff2228870d",
+    "parent": "App\\Http\\Controllers\\Controller",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Controller": "App\\Http\\Controllers\\Controller",
+        "Guard": "Illuminate\\Contracts\\Auth\\Guard",
+        "PasswordBroker": "Illuminate\\Contracts\\Auth\\PasswordBroker",
+        "ResetsPasswords": "Illuminate\\Foundation\\Auth\\ResetsPasswords"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": {
+        "Illuminate\\Foundation\\Auth\\ResetsPasswords": "Illuminate\\Foundation\\Auth\\ResetsPasswords"
+    },
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 30,
+            "short_desc": "Create a new password controller instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "auth": {
+                    "name": "auth",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Controllers\\Auth\\Illuminate\\Contracts\\Auth\\Guard",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\Guard",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "passwords": {
+                    "name": "passwords",
+                    "line": 30,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Controllers\\Auth\\Illuminate\\Contracts\\Auth\\PasswordBroker",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\PasswordBroker",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

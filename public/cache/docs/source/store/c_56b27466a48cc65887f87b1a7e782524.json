@@ -1,0 +1,78 @@
+{
+    "name": "Senshi\\Transformers\\MemberTransformer",
+    "line": 13,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Transformers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Transformers\/MemberTransformer.php",
+    "relative_file": null,
+    "hash": "a66538a26dee75e6f44c1b18e18ac57cfc5234db",
+    "parent": "Senshi\\Transformers\\Transformer",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "ArrayNester": "Senshi\\Nesters\\ArrayNester"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "transform": {
+            "name": "transform",
+            "line": 15,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "member": {
+                    "name": "member",
+                    "line": 15,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "transformNest": {
+            "name": "transformNest",
+            "line": 45,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "member": {
+                    "name": "member",
+                    "line": 45,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

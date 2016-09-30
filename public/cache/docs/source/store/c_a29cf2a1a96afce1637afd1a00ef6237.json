@@ -1,0 +1,183 @@
+{
+    "name": "Senshi\\Files\\FileHandler",
+    "line": 18,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "Senshi\\Files",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Senshi\/Files\/FileHandler.php",
+    "relative_file": null,
+    "hash": "28f7e749b1d3fd05ab5df0b2315da017c4a09fd6",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Flysystem": "Flysystem",
+        "Config": "Illuminate\\Support\\Facades\\Config",
+        "Excel": "Excel",
+        "Facility": "App\\Facility"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "test": {
+            "name": "test",
+            "line": 20,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        },
+        "upload": {
+            "name": "upload",
+            "line": 28,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "path": {
+                    "name": "path",
+                    "line": 28,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "download": {
+            "name": "download",
+            "line": 32,
+            "short_desc": "",
+            "long_desc": "",
+            "hint": null,
+            "hint_desc": null,
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "connection": {
+                    "name": "connection",
+                    "line": 32,
+                    "short_desc": null,
+                    "long_desc": null,
+                    "hint": null,
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "scanDir": {
+            "name": "scanDir",
+            "line": 41,
+            "short_desc": "[scanDir description]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Senshi\\Files\\[type]",
+                    false
+                ]
+            ],
+            "hint_desc": "[description]",
+            "tags": [],
+            "modifiers": 1,
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "connection": {
+                    "name": "connection",
+                    "line": 41,
+                    "short_desc": "[description]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Senshi\\Files\\[type]",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "readFile": {
+            "name": "readFile",
+            "line": 51,
+            "short_desc": "[readFile description]",
+            "long_desc": "",
+            "hint": [
+                [
+                    "\\Senshi\\Files\\[type]",
+                    false
+                ]
+            ],
+            "hint_desc": "[description]",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "file": {
+                    "name": "file",
+                    "line": 51,
+                    "short_desc": "[description]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Senshi\\Files\\[type]",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "connection": {
+                    "name": "connection",
+                    "line": 51,
+                    "short_desc": "[description]",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Senshi\\Files\\[type]",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}

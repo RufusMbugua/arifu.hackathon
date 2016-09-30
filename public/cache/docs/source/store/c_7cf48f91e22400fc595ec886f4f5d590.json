@@ -1,0 +1,25 @@
+{
+    "name": "App\\User",
+    "line": 9,
+    "short_desc": "The model used to access and modify instances of a system user",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/User.php",
+    "relative_file": null,
+    "hash": "688a87e0a1792b87af410c91f150f432d19d823a",
+    "parent": "Illuminate\\Database\\Eloquent\\Model",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Model": "Illuminate\\Database\\Eloquent\\Model"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

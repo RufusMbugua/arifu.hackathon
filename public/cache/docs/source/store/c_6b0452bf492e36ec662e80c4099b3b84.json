@@ -1,0 +1,25 @@
+{
+    "name": "App\\Http\\Kernel",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Kernel.php",
+    "relative_file": null,
+    "hash": "7467e2aee7614f8b047600b08f47c47bb9268cf4",
+    "parent": "Illuminate\\Foundation\\Http\\Kernel",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "HttpKernel": "Illuminate\\Foundation\\Http\\Kernel"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

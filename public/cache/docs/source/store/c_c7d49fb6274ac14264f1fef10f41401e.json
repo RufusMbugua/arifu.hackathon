@@ -1,0 +1,82 @@
+{
+    "name": "App\\Providers\\BusServiceProvider",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Providers",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Providers\/BusServiceProvider.php",
+    "relative_file": null,
+    "hash": "03a24daea6632901d46531430d7a7600bce1095c",
+    "parent": "Illuminate\\Support\\ServiceProvider",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Dispatcher": "Illuminate\\Bus\\Dispatcher",
+        "ServiceProvider": "Illuminate\\Support\\ServiceProvider"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "boot": {
+            "name": "boot",
+            "line": 14,
+            "short_desc": "Bootstrap any application services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "dispatcher": {
+                    "name": "dispatcher",
+                    "line": 14,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Providers\\Illuminate\\Bus\\Dispatcher",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Bus\\Dispatcher",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "register": {
+            "name": "register",
+            "line": 29,
+            "short_desc": "Register any application services.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": []
+        }
+    },
+    "constants": []
+}

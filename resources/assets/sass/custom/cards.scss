@@ -1,0 +1,86 @@
+
+/* Cards */
+@mixin card($height){
+  width:100% !important;
+  i{
+    padding-right:10px;
+  }
+  margin-bottom:2em;
+  .header{
+    .card-meta{
+      color:$gray;
+    }
+
+  }
+  .content{
+    min-height:$height !important;
+    background:white;
+    padding-top:0;
+    padding:0.5em;
+    border:1px solid $silver;
+    border-top:none;
+    .stats{
+      @extend .row;
+      div.stat{
+        @extend .col-md-6;
+        .value{
+          @extend .typl8-beta;
+          color:$dark-gray;
+          text-align:center;
+        }
+        .description{
+          color:$madison;
+          text-align:center;
+        }
+      }
+      div.stat:hover{
+        cursor: hand;
+        .value{
+          color:$ocean-green;
+        }
+      }
+    }
+    .description{
+      border-radius:3px;
+      border-bottom-left-radius:3px;
+      padding:10px;
+      font-size:1.1em;
+      @extend .row;
+      margin:0;
+      .detail{
+        @extend .col-md-4;
+        color:$madison;
+          font-weight:bold;
+
+      }
+      .user{
+        text-align: right;
+        @extend .col-md-8;
+
+      }
+    }
+    .btn{
+      @extend .typl8-zeta;
+      display:block;
+    }
+  }
+}
+.card-sm{
+  @include card(200px);
+}
+.card-md{
+  @include card('30%');
+}
+.card-lg{
+  @extend .col-md-12;
+  @include card('30%');
+}
+.cards{
+  padding-top:0 !important;
+  .column{
+    padding-top:0 !important;
+  }
+  .cards{
+    padding:0 !important;
+  }
+}

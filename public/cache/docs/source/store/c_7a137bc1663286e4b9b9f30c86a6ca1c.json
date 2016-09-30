@@ -1,0 +1,25 @@
+{
+    "name": "App\\Http\\Requests\\Request",
+    "line": 5,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Requests",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Requests\/Request.php",
+    "relative_file": null,
+    "hash": "cfac00a166731340927b34fbdfba0c76887606cb",
+    "parent": "Illuminate\\Foundation\\Http\\FormRequest",
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "FormRequest": "Illuminate\\Foundation\\Http\\FormRequest"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": [],
+    "constants": []
+}

@@ -1,0 +1,115 @@
+{
+    "name": "App\\Http\\Middleware\\Authenticate",
+    "line": 6,
+    "short_desc": "",
+    "long_desc": "",
+    "hint": null,
+    "tags": [],
+    "namespace": "App\\Http\\Middleware",
+    "file": "\/private\/var\/www\/kescrow\/config\/..\/app\/Http\/Middleware\/Authenticate.php",
+    "relative_file": null,
+    "hash": "41200758c3ea616ef7cc5f9bd274dfd6d66c3487",
+    "parent": null,
+    "modifiers": "Stmt_Class",
+    "is_trait": false,
+    "is_interface": false,
+    "aliases": {
+        "Closure": "Closure",
+        "Guard": "Illuminate\\Contracts\\Auth\\Guard"
+    },
+    "errors": [],
+    "interfaces": [],
+    "traits": [],
+    "properties": [],
+    "methods": {
+        "__construct": {
+            "name": "__construct",
+            "line": 21,
+            "short_desc": "Create a new filter instance.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "void",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "auth": {
+                    "name": "auth",
+                    "line": 21,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "App\\Http\\Middleware\\Illuminate\\Contracts\\Auth\\Guard",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Illuminate\\Contracts\\Auth\\Guard",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        },
+        "handle": {
+            "name": "handle",
+            "line": 33,
+            "short_desc": "Handle an incoming request.",
+            "long_desc": "",
+            "hint": [
+                [
+                    "mixed",
+                    false
+                ]
+            ],
+            "hint_desc": "",
+            "tags": [],
+            "modifiers": "1",
+            "is_by_ref": "",
+            "exceptions": [],
+            "errors": [],
+            "parameters": {
+                "request": {
+                    "name": "request",
+                    "line": 33,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "\\Illuminate\\Http\\Request",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "",
+                    "default": null,
+                    "is_by_ref": false
+                },
+                "next": {
+                    "name": "next",
+                    "line": 33,
+                    "short_desc": "",
+                    "long_desc": null,
+                    "hint": [
+                        [
+                            "Closure",
+                            false
+                        ]
+                    ],
+                    "tags": [],
+                    "modifiers": "Closure",
+                    "default": null,
+                    "is_by_ref": false
+                }
+            }
+        }
+    },
+    "constants": []
+}
